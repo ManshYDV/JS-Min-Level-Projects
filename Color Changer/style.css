@@ -1,0 +1,33 @@
+span{
+    display: block;
+}
+body{
+    background-color: rgb(0, 0, 0);;
+    color: rgb(255, 255, 255);;
+}
+.canvas{
+    margin: 100px auto 100px;
+    width: 80%;
+    text-align: center;
+}
+.button{
+    width: 100px;
+    height: 100px;
+    border: solid black 2px;
+    display: inline-block;
+}
+#Red{
+    background: red;
+}
+#Orange{
+    background: orange;
+}
+#Yellow{
+    background: yellow;
+}
+#DarkGreen{
+    background: DarkGreen;
+}
+#Purple{
+    background: purple;
+}

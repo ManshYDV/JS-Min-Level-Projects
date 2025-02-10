@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guess Game</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav>
+      <a href="../index.html">Home</a>
+    </nav>
+    <div class="container">
+      <h1>Guess Game</h1>
+      <div class="minmaxcontainer">
+        <form class="MinMax">
+          <h5>
+            Please enter a value min and max, so that it can be used as a range
+            to guess the number
+          </h5>
+          <label>Min</label><br />
+          <input type="number" id="min" /><br />
+          <label>Max</label><br />
+          <input type="number" id="max" /><br />
+          <label>Enter Chances you want</label><br />
+          <input type="number" id="chances" /><br />
+          <button class="primary-success">Submit</button>
+        </form>
+      </div>
+      <h3>
+        Try & guess a number between <span id="minValue"></span> to
+        <span id="maxValue"></span>. You will have total of 10 chances. <br />If
+        you guessed it correctly you win else you lose
+      </h3>
+      <div class="guess">
+        <form class="form">
+          <label>Guess & Enter a number</label><br />
+          <input type="number" id="currGuess" /><br />
+          <button class="primary-success">Submit Guess</button>
+        </form>
+        <h4>Your previous guess was : <span id="previousGuess"></span></h4>
+        <h4>Guesses Remaining : <span id="RemainingGuesses"></span></h4>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
