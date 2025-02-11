@@ -8,6 +8,8 @@ let cRSpan = document.querySelector("#RemainingGuesses");
 let minVal = null;
 let maxVal = null;
 let ans = null;
+let arr = new Array();
+let limit = document.querySelector("#limit");
 MinMaxForm.addEventListener("submit", (e) => {
     e.preventDefault();
     minVal = parseInt(min.value, 10);
@@ -21,12 +23,14 @@ MinMaxForm.addEventListener("submit", (e) => {
     remainingChances = parseInt(chancesInput.value) || 10;
     cRSpan.innerHTML = remainingChances;
     ans = Math.floor(Math.random() * (maxVal - minVal + 1)) + minVal;
+    limit.innerHTML = remainingChances;
 })
 //guess operations
 let prevGuess = null;
 let currGuess = document.querySelector("#currGuess");
 let pGSpan = document.querySelector("#previousGuess");
 let form = document.querySelector(".form");
+let selectArr = document.querySelector("#array");
 form.addEventListener("submit", (e) => {
     e.preventDefault();//stops page refresh
     let userGuess = parseInt(currGuess.value, 10);
@@ -39,11 +43,13 @@ form.addEventListener("submit", (e) => {
         alert("Congratulations 🎉, you guesses the correct number. You won 🎉🎉🎉🎉");
         return;
     }
+    arr.push(userGuess);
     pGSpan.innerText = prevGuess != null ? prevGuess : "None";
     cRSpan.innerText = remainingChances;
     prevGuess = userGuess;
     if (remainingChances === 0) {
         alert(`Sorry, you ran out of chances, the correct ans was ${ans}`);
     }
+    selectArr.innerHTML = arr;
     currGuess.value = "";
 })
