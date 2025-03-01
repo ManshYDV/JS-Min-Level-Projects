@@ -52,3 +52,10 @@ button.addEventListener("click", () => {
     getNewHit();
     Score();
 })
+let popup = document.getElementById("popup");
+let closePopup = document.getElementById("closePopup");
+
+// Hide the popup when "I Understand" is clicked
+closePopup.addEventListener("click", () => {
+    popup.style.display = "none"; // Hide the popup
+});
