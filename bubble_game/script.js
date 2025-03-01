@@ -25,6 +25,7 @@ function timer() {
         else {
             document.querySelector("#pBottom").innerHTML = `<h1>Game Over</h1>`
             alert(`Timeout, Congratulation your final score is ${score}`);
+            clearValues();
             clearInterval(interval)
         }
     }, 1000);
@@ -53,6 +54,13 @@ button.addEventListener("click", () => {
     getNewHit();
     Score();
 })
+function clearValues() {
+    score = 0;
+    target = "";
+    document.querySelector("#hit").innerHTML = "";
+    document.querySelector("#score").innerHTML = score;
+    document.querySelector(".timer").innerHTML = 60;
+}
 let popup = document.getElementById("popup");
 let closePopup = document.getElementById("closePopup");
 
@@ -62,5 +70,6 @@ closePopup.addEventListener("click", () => {
 quit.addEventListener("click", () => {
     document.querySelector("#pBottom").innerHTML = `<h1>Game Over</h1>`
     alert(`Sadly, you quit the game, your score was ${score}`);
+    clearValues();
     clearInterval(interval)
 })
