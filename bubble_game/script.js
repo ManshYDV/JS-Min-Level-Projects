@@ -2,6 +2,7 @@ let interval;
 let time = 60;
 let score = 0;
 let button = document.querySelector("button");
+let quit = document.querySelector(".reset");
 let target;
 function createBubble() {
     let bubble = `<div class="bubble">1</div>`;
@@ -55,7 +56,11 @@ button.addEventListener("click", () => {
 let popup = document.getElementById("popup");
 let closePopup = document.getElementById("closePopup");
 
-// Hide the popup when "I Understand" is clicked
 closePopup.addEventListener("click", () => {
-    popup.style.display = "none"; // Hide the popup
+    popup.style.display = "none";
 });
+quit.addEventListener("click", () => {
+    document.querySelector("#pBottom").innerHTML = `<h1>Game Over</h1>`
+    alert(`Sadly, you quit the game, your score was ${score}`);
+    clearInterval(interval)
+})
